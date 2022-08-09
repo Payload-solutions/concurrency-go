@@ -55,3 +55,29 @@ If that sounds grim, it's because it is! The Go runtime attempts
 to do its part and will detect some deadlocks (all goroutines 
 must be blocked, or "asleep"), but this doesn't do much to help 
 you prvend deadlocks
+
+
+
+### The Coffman conditions are as follows:
+
+*Mutual Exclusion*
+  
+  A concurrent process holds exclusive rights to a resource at
+  any one time.
+
+*Wait For Condition*
+  
+  <p>A concurrent process must simultaneously hold a resource and be waiting for an additional resource</p>
+
+*No Preemption*
+
+  A resource held by a concurrent process can only be released by
+  that process, so it fulfills this conditions
+
+
+*Circular Wait*
+
+  A concurrent process (P1) must be waiting on a chain of other
+  concurrent process (P2), which are in turn waiting on it (P1),
+  so it fulfills this final condition too.
+
